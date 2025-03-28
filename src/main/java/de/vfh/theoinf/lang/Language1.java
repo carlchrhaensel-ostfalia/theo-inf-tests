@@ -11,6 +11,8 @@ public class Language1 {
      * und hinter jedem a direkt ein b folgt.
      */
     public static boolean accept(String word) {
-        return false;
+        Pattern pattern = Pattern.compile("([bc]*|ab)*", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(word);
+        return matcher.matches();
     }
 }
